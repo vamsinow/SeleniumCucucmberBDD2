@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="12.76" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Selecting a Product on Flipkart" name="User searches for and selects a product - Example #1.1" time="6.952">
+<system-out><![CDATA[
+Given the user is logged in on Flipkart with username  and password.........passed
+When the user searches for product "iPhone 12"..............................passed
+And selects the first product from the search results.......................passed
+Then the user should be on the product details page for "iPhone 12".........passed
+]]></system-out>
+</testcase>
+<testcase classname="Selecting a Product on Flipkart" name="User searches for and selects a product - Example #1.2" time="5.447">
+<system-out><![CDATA[
+Given the user is logged in on Flipkart with username  and password.........passed
+When the user searches for product "Samsung Galaxy".........................passed
+And selects the first product from the search results.......................passed
+Then the user should be on the product details page for "Samsung Galaxy"....passed
+]]></system-out>
+</testcase>
+</testsuite>

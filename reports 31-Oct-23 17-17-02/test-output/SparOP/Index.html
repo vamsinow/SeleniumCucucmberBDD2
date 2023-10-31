@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Extent</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c952cc003431b643d7a73337421ff42b75bac784/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Grasshopper Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Oct 31, 2023 05:17:02 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Oct 31, 2023 05:17:02 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Oct 31, 2023 05:18:40 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>2</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='66%'>
+<b>2</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='33%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='66%'><b>2</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='33%'><b>1</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='56%'><b>13</b> steps passed</small></div>
+<div>
+<small data-tooltip='8%'><b>2</b> steps failed,
+<b>8</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Login to lenskart app":50.371,"Perform add to cart operation":0.063,"Wishlist Functionality":97.121
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>AppName</td>
+<td>AutomationPractice</td>
+</tr>
+<tr>
+<td>user</td>
+<td>Vamsi</td>
+</tr>
+<tr>
+<td>build</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Windows 10 Pro</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 2,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 2,
+failChild: 1,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 13,
+failGrandChild: 2,
+warningGrandChild: 0,
+skipGrandChild: 8,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Login to lenskart app</p>
+            <p class="text-sm">
+              <span>17:17:03 PM</span> / <span>00:00:50:371</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Login to lenskart app</h5>
+<span class='badge badge-success'>10.31.2023 17:17:03</span>
+<span class='badge badge-danger'>10.31.2023 17:17:53</span>
+<span class='badge badge-default'>00:00:50:371</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User login to lenskart app</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.Demo1.user_navigated_to_lenskartapp()">
+                <span>Given User navigated to lenskartapp</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Demo1.user_clickon_popup_button()">
+                <span>When user clickon popup button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Demo1.user_click_on_signup_button()">
+                <span>When user click on signup button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Demo1.user_enter_the_email()">
+                <span>When user enter the email</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Demo1.user_enter_the_password()">
+                <span>When user enter the password</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Demo1.user_click_on_submit_button()">
+                <span>When user click on submit button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Demo1.user_click_on_scroll_the_webapp()">
+                <span>When user click on scroll the webapp</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.Demo1.user_clickon_option_option_that_available_in_lenskart_app()">
+                <span>When user clickon option option that available in lenskart app</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Perform add to cart operation</p>
+            <p class="text-sm">
+              <span>17:17:03 PM</span> / <span>00:00:00:063</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Perform add to cart operation</h5>
+<span class='badge badge-success'>10.31.2023 17:17:03</span>
+<span class='badge badge-danger'>10.31.2023 17:17:03</span>
+<span class='badge badge-default'>00:00:00:063</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="4"><span class="badge log fail-bg mr-2">Fail</span>User performs add to cart operation with validations</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="BEFORE">
+                <span>StepDefinitions.Hook.Hook.setUp()</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because "browser" is null
+	at StepDefinitions.Hook.WebDriverSingleton.getDriver(WebDriverSingleton.java:17)
+	at StepDefinitions.Hook.Hook.setUp(Hook.java:22)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.AddToCartLenskart.user_navigates_to_the_login_page_of_lenskart()">
+                <span>Given user navigates to the login page of Lenskart</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.AddToCartLenskart.user_navigates_to_the_computer_glasses_section()">
+                <span>And user navigates to the Computer Glasses section</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.AddToCartLenskart.user_performs_a_random_click_to_select_any_product()">
+                <span>When user performs a random click to select any product</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.AddToCartLenskart.user_navigated_to_product()">
+                <span>And user navigated to product</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.AddToCartLenskart.user_validate_the_product_by_price()">
+                <span>Then user validate the product by price</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.AddToCartLenskart.user_clicks_on_buynow_operation()">
+                <span>When user clicks on  buynow operation</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.AddToCartLenskart.user_validate_the_product_by_name()">
+                <span>Then user validate the product by name</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="StepDefinitions.AddToCartLenskart.user_navigates_to_the_lenskart_homepage()">
+                <span>And user navigates to the Lenskart homepage</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step fail-bg" title="AFTER">
+                <span>StepDefinitions.Hook.Hook.tearDown(io.cucumber.java.Scenario)</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.ClassCastException: class java.lang.ThreadLocal cannot be cast to class org.openqa.selenium.TakesScreenshot (java.lang.ThreadLocal is in module java.base of loader 'bootstrap'; org.openqa.selenium.TakesScreenshot is in unnamed module of loader 'app')
+	at StepDefinitions.Hook.Hook.tearDown(Hook.java:40)
+</textarea>
+      
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Wishlist Functionality</p>
+            <p class="text-sm">
+              <span>17:17:03 PM</span> / <span>00:01:37:121</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Wishlist Functionality</h5>
+<span class='badge badge-success'>10.31.2023 17:17:03</span>
+<span class='badge badge-danger'>10.31.2023 17:18:40</span>
+<span class='badge badge-default'>00:01:37:121</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="6"><span class="badge log pass-bg mr-2">Pass</span>Add an item to the wishlist</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="StepDefinitions.AddToWishlistAndRemove.a_logged_in_user_is_on_the_product_page()">
+                <span>Given a logged-in user is on the product page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.AddToWishlistAndRemove.user_clicks_on_kids_glasses()">
+                <span>When user clicks on KidsGlasses</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.AddToWishlistAndRemove.the_user_adds_an_item_to_their_wishlist()">
+                <span>When the user adds an item to their wishlist</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.AddToWishlistAndRemove.user_clicks_on_wishlist()">
+                <span>When user clicks on wishlist</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="StepDefinitions.AddToWishlistAndRemove.user_validate_price_of_select_product()">
+                <span>Then user validate price of select product</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.NullPointerException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.NullPointerException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:17:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='7'>StepDefinitions.Hook.Hook.setUp()</a>
+<div class="">
+<span class="badge badge-default">Perform add to cart operation.User performs add to cart operation with validations.StepDefinitions.Hook.Hook.setUp()</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.ClassCastException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.ClassCastException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:17:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='18'>StepDefinitions.Hook.Hook.tearDown(io.cucumber.java.Scenario)</a>
+<div class="">
+<span class="badge badge-default">Perform add to cart operation.User performs add to cart operation with validations.StepDefinitions.Hook.Hook.tearDown(io.cucumber.java.Scenario)</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [MyTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="3" parallel="tests" name="MyTest1(failed)">
+    <classes>
+      <class name="StepDefinitions.Hook.TestNgRunner1">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- StepDefinitions.Hook.TestNgRunner1 -->
+    </classes>
+  </test> <!-- MyTest1(failed) -->
+</suite> <!-- Failed suite [MyTestSuite] -->
