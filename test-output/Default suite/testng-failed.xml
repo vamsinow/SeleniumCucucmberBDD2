@@ -6,7 +6,7 @@
       <class name="StepDefinitions.Hook.TestNgRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
+          <include name="runScenario" invocation-numbers="2"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- StepDefinitions.Hook.TestNgRunner -->
